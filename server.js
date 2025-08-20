@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-var hostname = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0";
+var hostname = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || process.env.HOSTNAME || "0.0.0.0";
 const port = 8080;
 //const server = http.createServer((req, res) => {
 //  res.statusCode = 200;
