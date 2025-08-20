@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang=pl>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Welcome to Spider OpenShift</title>
+    <style>
+        body {
+    background-color: azure;
+    color: #4f78e1;
+    font-family: "Helvetica Neue",Helvetica,"Liberation Sans",Arial,sans-serif;
+    font-size: 24px;
+    line-height: 1.4;
+        }
+        ul {
+      margin-top: 0;
+        }
+    #t01 {
+        width: 100%; 
+        background-color: #13130e;
+        color: lightgray
+        }
+    #t02 {
+        width: 100%; 
+        background-color: #f1ee0e;
+        }
+    #t03 {
+        width: 100%; 
+        background-color: lightgray;
+        color: red
+        }
+    </style>
+    
+    
+    </head>
+
+<body>
+    
+   
+    <table id="t01">   
+    <tr>
+        <th>
+            <h1>This is simple OpenShift demo</h1>
+        </th>
+    </tr>
+    </table>
+    
+    
+    <table id="t02"> 
+    <tr>
+        <th>
+        <h2>Hello from  Openshift Platform</h2><h1>Application version 1.0</h1>
+        </th>
+    </tr> 
+
+
+    </table>
+
+    <table id="t03">   
+    <tr>
+        <th>
+            <h2>I'm working on:</h2> <h1><p id="demo"></p></h1>
+        </th>
+    </tr>
+    </table>
+
+
+
+<script>
+//var d = process.env.hostname;
+const api_hostname_url = '/hostname';
+async function getHostname() {
+    const response = await fetch(api_hostname_url);
+    const data = await response.json();
+    return data.hostname;
+}
+
+getHostname().then((hostname) => {
+    document.getElementById("demo").innerHTML = hostname;
+});
+
+//document.getElementById("demo").innerHTML = d;
+</script>
+
+</body>
+</html>
